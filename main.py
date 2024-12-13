@@ -1,43 +1,16 @@
-def bubble_sort(numbers, reverse=False):
-    n = len(numbers)
-    for i in range(n):
-        for j in range(0, n - i - 1):
-            if (reverse and numbers[j] < numbers[j + 1]) or \
-               (not reverse and numbers[j] > numbers[j + 1]):
-                numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
-    return numbers
+# This is a sample Python script.
+
+# Press Shift+F10 to execute it or replace it with your code.
+# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-if __name__ == "__main__":
-    numbers = []
-    try:
-        n = int(input("Enter the number of elements: "))
-        if n <= 0:
-            print("Please enter a positive integer.")
-        else:
-            for i in range(n):
-                while True:
-                    try:
-                        num = float(input(f"Enter element {i + 1}: "))
-                        numbers.append(num)
-                        break
-                    except ValueError:
-                        print("Invalid input. Please enter a number.")
+def print_hi(name):
+    # Use a breakpoint in the code line below to debug your script.
+    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
-            while True:
-                direction = input("Sort in ascending order (a) or descending order (d)? ").lower()
-                if direction in ('a', 'd'):
-                    break
-                else:
-                    print("Invalid input. Please enter 'a' or 'd'.")
 
-            if direction == 'd':
-                reverse = True
-            else:
-                reverse = False
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    print_hi('PyCharm')
 
-            sorted_numbers = bubble_sort(numbers, reverse)
-            print("Sorted numbers:", sorted_numbers)
-
-    except ValueError:
-        print("Invalid input for the number of elements. Please enter an integer.")
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
